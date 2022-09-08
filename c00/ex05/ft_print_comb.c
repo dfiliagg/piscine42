@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dfiliagg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 10:46:44 by dfiliagg          #+#    #+#             */
-/*   Updated: 2022/09/08 13:02:51 by dfiliagg         ###   ########.fr       */
+/*   Created: 2022/09/08 13:19:18 by dfiliagg          #+#    #+#             */
+/*   Updated: 2022/09/08 16:42:15 by dfiliagg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include<unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_print_comb(void)
 {
-	if (n < 0)
+	int	i;
+	int	j;
+	int	k;
+
+	i = 48;
+	while (i < 56)
 	{
-		write(1, "N", 1);
-	}
-	else
-	{
-		write(1, "P", 1);
+		j = i + 1;
+		while (j < 57)
+		{
+			k = j + 1;
+			while (k < 58)
+			{
+				write (1, &i, 1);
+				write (1, &j, 1);
+				write (1, &k, 1);
+				if (i != 55 && j != 56 && k != 57)
+					write(1, ", ", 2);
+				k++;
+			}
+			j++;
+		}
+		i++;
 	}
 }

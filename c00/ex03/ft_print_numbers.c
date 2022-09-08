@@ -6,11 +6,12 @@
 /*   By: dfiliagg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:23:12 by dfiliagg          #+#    #+#             */
-/*   Updated: 2022/09/08 11:23:26 by dfiliagg         ###   ########.fr       */
+/*   Updated: 2022/09/08 12:08:21 by dfiliagg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<unistd.h>
 
-void	ft_print_numbers(){
+void	ft_print_numbers(void)
+{
 	write(1, "0123456789", 10);
 }
