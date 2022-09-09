@@ -6,7 +6,7 @@
 /*   By: dfiliagg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 08:22:50 by dfiliagg          #+#    #+#             */
-/*   Updated: 2022/09/09 12:00:01 by dfiliagg         ###   ########.fr       */
+/*   Updated: 2022/09/09 12:24:44 by dfiliagg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ void	ft_putnbr(int nb)
 {
 	int	indice;
 
-	indice = indic(nb);
-	indice = indmax(nb, indice);
-	reversed(nb, indice);
+	if (nb != -2147483648)
+	{
+		indice = indic(nb);
+		indice = indmax(nb, indice);
+		reversed(nb, indice);
+	}
+	else
+	{
+		write(1, "-2147483648", 11);
+	}
 }
 
 int	indic(int n)
@@ -34,6 +41,7 @@ int	indic(int n)
 	if (n < 0)
 	{
 		n = n * -1;
+		write(1, "-", 1);
 	}
 	while (n > 9)
 	{
